@@ -65,10 +65,10 @@
     <column id="COL15" populated="true" UUID="8c799d94-7965-495e-b6ed-5e647ed18d2b" autoIncrement="false" autoIncrementSequenceName="movimento_dtvenda_seq" defaultValue="" name="dtvenda" nullable="0" physicalName="dtvenda" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
      <remarks></remarks>
     </column>
-    <column id="COL16" populated="true" UUID="b98590d2-3764-4151-a7c8-4318c8b1fb6e" autoIncrement="false" autoIncrementSequenceName="movimento_idFornecedor_seq" defaultValue="" name="idFornecedor" nullable="1" physicalName="idFornecedor" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL16" populated="true" UUID="d14620af-5c5d-43f0-ab15-23f6c71bb783" autoIncrement="false" autoIncrementSequenceName="movimento_tipoMovimento_seq" defaultValue="" name="tipoMovimento" nullable="0" physicalName="tipoMovimento" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="16" userDefinedTypeUUID="a26374aa-3026-4bb8-b564-eb2e186dfa5d" >
      <remarks></remarks>
     </column>
-    <column id="COL17" populated="true" UUID="020e108e-ffbf-4777-bccc-f6e4836cd753" autoIncrement="false" autoIncrementSequenceName="movimento_idpessoaFisica_seq" defaultValue="" name="idpessoaFisica" nullable="1" physicalName="idpessoaFisica" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL17" populated="true" UUID="b98590d2-3764-4151-a7c8-4318c8b1fb6e" autoIncrement="false" autoIncrementSequenceName="movimento_idPessoaFisica_seq" defaultValue="" name="idPessoaFisica" nullable="1" physicalName="idPessoaFisica" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL18" populated="true" UUID="fd3038bc-11ff-42d6-953e-277663550478" autoIncrement="false" autoIncrementSequenceName="pessoaJuridica_idPessoaJuridica_seq" defaultValue="" name="idPessoaJuridica" nullable="1" physicalName="idPessoaJuridica" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
@@ -239,20 +239,17 @@
     <column-mapping id="CMP69" populated="true" UUID="8f4072f5-8a15-4be2-b11f-7e4de0a93cc8" fk-column-ref="COL54" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL38" />
    </relationship>
    <relationship id="REL70" populated="true" UUID="06d2c175-8d9b-4063-9d50-3a836b12fff4" deferrability="7" deleteRule="3" fk-table-ref="TAB13" fkCardinality="7" identifying="false" name="cliente_idvend_fk" physicalName="cliente_idvend_fk" pk-table-ref="TAB46" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP71" populated="true" UUID="54951779-063f-49d4-9afc-cebd4257f004" fk-column-ref="COL16" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL47" />
+    <column-mapping id="CMP71" populated="true" UUID="54951779-063f-49d4-9afc-cebd4257f004" fk-column-ref="COL17" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL47" />
    </relationship>
-   <relationship id="REL72" populated="true" UUID="e1813e1c-da7f-49e0-ad40-b90e097aab32" deferrability="7" deleteRule="3" fk-table-ref="TAB13" fkCardinality="7" identifying="false" name="fornecedor_idvend_fk" physicalName="fornecedor_idvend_fk" pk-table-ref="TAB53" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP73" populated="true" UUID="eb505324-57cb-4335-9442-2c3e299a83de" fk-column-ref="COL17" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL54" />
-   </relationship>
-   <relationship id="REL74" populated="true" UUID="00f11dec-f533-481f-a5e6-d94091e471ab" deferrability="7" deleteRule="3" fk-table-ref="TAB13" fkCardinality="7" identifying="false" name="pessoaJuridica_movimento_fk" physicalName="pessoaJuridica_movimento_fk" pk-table-ref="TAB53" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP75" populated="true" UUID="d8f29a5f-e521-47aa-a4a2-8a8bc7c1dc03" fk-column-ref="COL18" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL54" />
+   <relationship id="REL72" populated="true" UUID="00f11dec-f533-481f-a5e6-d94091e471ab" deferrability="7" deleteRule="3" fk-table-ref="TAB13" fkCardinality="7" identifying="false" name="pessoaJuridica_movimento_fk" physicalName="pessoaJuridica_movimento_fk" pk-table-ref="TAB53" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP73" populated="true" UUID="d8f29a5f-e521-47aa-a4a2-8a8bc7c1dc03" fk-column-ref="COL18" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL54" />
    </relationship>
   </relationships>
  </target-database>
  <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="true" target-schema="public"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
- <play-pen zoom="1.1892071150027206" viewportX="83" viewportY="54" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+ <play-pen zoom="0.9999999999999996" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
   <table-pane table-ref="TAB1" x="553" y="43" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB7" x="169" y="47" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB13" x="364" y="440" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
@@ -268,8 +265,7 @@
   <table-link relationship-ref="REL66" pkConnection="0.27611940298507465" fkConnection="0.13333333333333333" rLineColor="0x333333" pkLabelText="" fkLabelText="" orientation="18"/>
   <table-link relationship-ref="REL68" pkConnection="0.5590909090909091" fkConnection="0.9154929577464789" rLineColor="0x333333" pkLabelText="" fkLabelText="" orientation="132"/>
   <table-link relationship-ref="REL70" pkConnection="0.5796460176991151" fkConnection="0.4321608040201005" rLineColor="0x333333" pkLabelText="" fkLabelText="" orientation="132"/>
-  <table-link relationship-ref="REL72" pkConnection="1.0" fkConnection="0.5641025641025641" rLineColor="0x333333" pkLabelText="" fkLabelText="" orientation="18"/>
-  <table-link relationship-ref="REL74" pkConnection="0.21212121212121213" fkConnection="0.27350427350427353" rLineColor="0x212121" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL72" pkConnection="0.4090909090909091" fkConnection="0.27350427350427353" rLineColor="0x212121" pkLabelText="" fkLabelText="" orientation="18"/>
  </play-pen>
  <critic-manager>
   <critic-grouping platformType="Generic" enabled="true">
