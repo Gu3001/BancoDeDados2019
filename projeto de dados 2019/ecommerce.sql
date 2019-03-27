@@ -213,6 +213,16 @@ VALUES ('HD externo 1 TB', 90, 20, 230.00),
        ('HD externo 2 TB', 48, 12, 400.50),
        ('HD externo 2 TB', 48, 12, 400.50),
        ('HD externo 2 TB', 48, 12, 400.50),
+       ('HD externo 2 TB', 48, 12, 400.50),
+       ('HD externo 2 TB', 48, 12, 400.50),
+       ('HD externo 2 TB', 48, 12, 400.50),
+       ('HD externo 2 TB', 48, 12, 400.50),
+       ('HD externo 2 TB', 48, 12, 400.50),
+       ('HD externo 2 TB', 48, 12, 400.50),
+       ('HD externo 2 TB', 48, 12, 400.50),
+       ('HD externo 2 TB', 48, 12, 400.50),
+       ('HD externo 2 TB', 48, 12, 400.50),
+       ('HD externo 2 TB', 48, 12, 400.50),
        ('HD externo 2 TB', 48, 12, 400.50);
 
 /*alterar tudo isso*/
@@ -222,17 +232,17 @@ INSERT INTO itens_mov(idmov_mov,idprod_mov,qtde,preco) VALUES
 (2,3,20,'6.50'),
 (2,4,30,'7.50'),
 (3,5,30,'7.00'),
-(3,6,20,'3.00');
-/*(4,7,2,'3.00'),
+(3,6,20,'3.00'),
+(4,7,2,'3.00'),
 (4,8,2,'6.50'),
 (5,9,2,'7.50'),
 (5,10,2,'10.00'),
 (6,11,2,'3.00'),
-(6,12,2,'5.00');*/
+(6,12,2,'5.00');
 
 /*SELECTS A SEREM ALTERADOS*/
 
-/*Fazer um balanço financeiro MENSALMENTE para ter uma noção das despesas em compras com o pessoaJuridica.*/
+/*Fazer um balanço financeiro MENSALMENTE para ter uma noção das DESPESAS em compras com o pessoaJuridica.*/
 SELECT pessoa.nome"Nome da Empresa Juridica", movimento.dtvenda"Data da Compra", movimento.tipoMovimento, (itens_mov.preco*qtde)"Preço Total", itens_mov.qtde"Quantidade", produto.nome"Nome do Produto"
 FROM pessoa INNER JOIN pessoaJuridica
 ON pessoa.idpessoa = pessoaJuridica.idPessoaJuridica
@@ -242,12 +252,13 @@ INNER JOIN itens_mov
 ON movimento.idmov = itens_mov.idmov_mov
 INNER JOIN produto
 ON itens_mov.idprod_mov = produto.idprod
-WHERE dtvenda BETWEEN '2018-11-01' AND '2019-11-30';
+WHERE dtvenda BETWEEN '2018-11-01' AND '2019-11-30' AND tipomovimento = False;
 
 
 /*Fazer um balanço financeiro MENSALMENTE para se ter uma noção da margem de lucro.*/
 SELECT pessoa.nome"Nome da pessoa fisica", movimento.dtvenda"Data da Venda", (itens_mov.preco*qtde)"Preço", itens_mov.qtde"Quantidade", produto.nome"Nome do Produto"
-FROM pessoa INNER JOIN pessoaFisica
+FROM pessoa 
+LEFT JOIN pessoaFisica
 ON pessoa.idpessoa = pessoaFisica.idPessoaFisica
 INNER JOIN movimento
 ON pessoaFisica.idPessoaFisica = movimento.idmov
@@ -256,6 +267,22 @@ ON movimento.idmov = itens_mov.idmov_mov
 INNER JOIN produto
 ON itens_mov.idprod_mov = produto.idprod
 WHERE dtvenda BETWEEN '2018-11-01' AND '2019-11-30';
+
+
+/*--------------------------------------------*/
+SELECT pessoa.nome"Nome da pessoa fisica", movimento.dtvenda"Data da Venda", (itens_mov.preco*qtde)"Preço", itens_mov.qtde"Quantidade", produto.nome"Nome do Produto"
+FROM produto
+INNER JOIN itens_mov
+ON produto.idprod = itens_mov.idprod_mov
+INNER JOIN movimento
+ON itens_mov.idmov_mov = movimento.idmov
+INNER JOIN pessoaJuridica
+ON movimento.idmov = pessoaJuridica.idPessoaJuridica
+RIGHT JOIN pessoa
+ON pessoaJuridica.idPessoaJuridica = pessoa.idpessoa
+LEFT JOIN pessoaFisica
+ON pessoa.idpessoa = pessoaFisica.idPessoaFisica;
+
 
 /*Fazer um balanço financeiro DIARIAMENTE para ter um controle sobre as receitas*/
 SELECT pessoa.nome"Nome da Pessoa Fisica", movimento.dtvenda"Data da Venda", (itens_mov.preco*qtde)"Preço", itens_mov.qtde"Quantidade", produto.nome"Nome do Produto"
@@ -314,7 +341,7 @@ SELECT nome"Nome do Produto", qtdeest"Quantidade em estoque", qtdemin"Quantidade
 WHERE nome LIKE '%H%'; 
 
 /*Permitir fazer a busca de fornecedores pelo nome, para possíveis alterações futuras*/
-SELECT pessoa.nome"Nome da Fornecedora",pessoa.telefone"Telefone",pessoa.endereco"Endereço",pessoa.email"Email",pessoaJuridica.cnpj"CNPJ",cidade.nome"Cidade",estado.nome"Estado"
+SELECT pessoa.nome"Nome da PessoaJuridica",pessoa.telefone"Telefone",pessoa.endereco"Endereço",pessoa.email"Email",pessoaJuridica.cnpj"CNPJ",cidade.nome"Cidade",estado.nome"Estado"
 FROM pessoa INNER JOIN pessoaJuridica
 ON pessoa.idpessoa = pessoaJuridica.idPessoaJuridica
 INNER JOIN cidade
