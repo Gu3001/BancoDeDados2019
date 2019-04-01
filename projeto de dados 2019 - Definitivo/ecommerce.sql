@@ -163,9 +163,9 @@ INSERT INTO cidade(nome,idestado) VALUES
 
 
 INSERT INTO pessoa(nome,telefone, endereco, email, idcidade) VALUES
-('pessoaJuridicaa Ambev', 'Rua das Nações','34421515','beer@gmail.com',5),
-('pessoaJuridicaa Adega Brasil', 'Rua do Irineu','34421515','bebidasCia@gmail.com',5),
-('pessoaJuridicaa Spaipa', 'Rua Groove', '34221190','diversity@gmail.com',4),
+('Info & cia', 'Rua das Nações','34421515','beer@gmail.com',5),
+('Escritório Atimus', 'Rua do Irineu','34421515','bebidasCia@gmail.com',5),
+('Rede Livre Comércios', 'Rua Groove', '34221190','diversity@gmail.com',4),
 ('José Amado', 'Rua do ABC','30451120', 'amador@hotmail.com',1),
 ('Ana Maria', 'Rua João da Silva', '30456711','anamaria@outlook.com',1),
 ('João Desah Parecido', 'Avenida do Caneco','31459212', 'jao123@yahoo.com',2),
@@ -194,51 +194,51 @@ INSERT INTO pessoaJuridica(idpessoaJuridica, cnpj) VALUES
 
 INSERT INTO movimento(dtvenda, tipoMovimento, idPessoaFisica, idPessoaJuridica) VALUES /*um dos id é null, pois ou é pessoaFisica, ou pessoaJuridica*/ 
 /*True é uma venda, False é uma compra*/
-('2018-11-20', True ,NULL,1), /*ULTIMO CAMPO FOI UMA COMPRA/VENDA DO pessoaJuridica*/
-('2018-11-21', False ,NULL,1),
-('2018-11-25', True ,NULL,2),
-('2018-11-20', False ,NULL,2),
-('2018-11-21', False ,NULL,3),
-('2018-11-25', False ,NULL,3),
-('2016-05-02', True ,4,NULL), /*PENULTIMA FOI UMA VENDA PARA pessoaFisica*/
-('2018-11-04', True ,4,NULL),
-('2018-11-05', True ,5,NULL),
-('2018-11-04', True ,5,NULL),
-('2018-11-05', True ,6,NULL),
-('2018-11-04', True ,6,NULL);
+('2019-11-20', True ,NULL,1), /*ULTIMO CAMPO FOI UMA COMPRA/VENDA DO pessoaJuridica*/
+('2019-11-21', False ,NULL,1),
+('2019-11-25', True ,NULL,2),
+('2019-11-20', False ,NULL,2),
+('2019-11-21', False ,NULL,3),
+('2019-11-25', False ,NULL,3),
+('2019-05-02', True ,4,NULL), /*PENULTIMA FOI UMA VENDA PARA pessoaFisica*/
+('2019-11-04', True ,4,NULL),
+('2019-11-05', True ,5,NULL),
+('2019-11-04', True ,5,NULL),
+('2019-11-05', True ,6,NULL),
+('2019-11-04', True ,6,NULL);
 
 INSERT INTO produto (nome, qtdeest, qtdemin, precovenda) /*Alterar produtos*/
-VALUES ('HD externo 1 TB', 90, 20, 230.00),
-       ('HD externo 2 TB', 48, 12, 400.50),
-       ('HD externo 2 TB', 48, 12, 400.50),
-       ('HD externo 2 TB', 48, 12, 400.50),
-       ('HD externo 2 TB', 48, 12, 400.50),
-       ('HD externo 2 TB', 48, 12, 400.50),
-       ('HD externo 2 TB', 48, 12, 400.50),
-       ('HD externo 2 TB', 48, 12, 400.50),
-       ('HD externo 2 TB', 48, 12, 400.50),
-       ('HD externo 2 TB', 48, 12, 400.50),
-       ('HD externo 2 TB', 48, 12, 400.50),
-       ('HD externo 2 TB', 48, 12, 400.50),
-       ('HD externo 2 TB', 48, 12, 400.50),
-       ('HD externo 2 TB', 48, 12, 400.50),
-       ('HD externo 2 TB', 48, 12, 400.50),
-       ('HD externo 2 TB', 48, 12, 400.50);
+VALUES ('Notebook Lenovo i3', 40, 20, 1900.00),
+       ('Notebook Lenovo Quadcore', 30, 20, 400.50),
+       ('HD externo 1 TB', 48, 40, 224.50),
+       ('HD externo 2 TB', 60, 40, 355.50),
+       ('HD externo 4 TB', 48, 40, 529.50),
+       ('Monitor Acer HD', 20, 12, 1100.00),
+       ('Pendrive 4 gb', 48, 25, 20.00),
+       ('Pendrive 8 gb', 48, 25, 40.50),
+       ('Pendrive 16 gb', 48, 25, 60.00),
+       ('Iphone 7', 20, 10, 2900.00),
+       ('Moto g7 play', 40, 25, 999.99),
+       ('Moto g7', 40, 25, 1200.50),
+       ('Headset Gamer Razer Kraken', 20, 12, 521.50),
+       ('Fone de ouvido Intra Auricular', 48, 25, 40.50),
+       ('Mouse sem fio', 40, 20, 40.00),
+       ('Mouse Hardline', 40, 30, 15.00);
 
 /*alterar tudo isso*/
 INSERT INTO itens_mov(idmov_mov,idprod_mov,qtde,preco) VALUES
-(1,1,20,'3.00'), /*Atenção repita o preço do produto, pois ficará no histórico, a tabela produto pode ter seus preços alterados*/
-(1,2,10,'3.50'),
-(2,3,20,'6.50'),
-(2,4,30,'7.50'),
-(3,5,30,'7.00'),
-(3,6,20,'3.00'),
-(4,7,2,'3.00'),
-(4,8,2,'6.50'),
-(5,9,2,'7.50'),
-(5,10,2,'10.00'),
-(6,11,2,'3.00'),
-(6,12,2,'5.00');
+(1,1,20,'1900.00'), /*Atenção repita o preço do produto, pois ficará no histórico, a tabela produto pode ter seus preços alterados*/
+(1,2,10,'400.50'),
+(2,3,5,'224.50'),
+(2,4,6,'355.50'),
+(3,5,7,'529.50'),
+(3,6,4,'1100.00'),
+(4,7,2,'20.00'),
+(4,8,2,'40.50'),
+(5,9,2,'60.00'),
+(5,10,2,'2900.00'),
+(6,11,2,'999.99'),
+(6,12,2,'1200.50');
 
 /*SELECTS A SEREM ALTERADOS*/
 
@@ -252,7 +252,7 @@ INNER JOIN itens_mov
 ON movimento.idmov = itens_mov.idmov_mov
 INNER JOIN produto
 ON itens_mov.idprod_mov = produto.idprod
-WHERE dtvenda BETWEEN '2018-11-01' AND '2018-11-30' AND tipomovimento = False;
+WHERE dtvenda BETWEEN '2019-11-01' AND '2019-11-30' AND tipomovimento = False;
 
 
 /*Fazer um balanço financeiro MENSALMENTE para se ter uma noção da margem de lucro com Pessoas Físicas.*/
@@ -266,7 +266,7 @@ INNER JOIN itens_mov
 ON movimento.idmov = itens_mov.idmov_mov
 INNER JOIN produto
 ON itens_mov.idprod_mov = produto.idprod
-WHERE dtvenda BETWEEN '2018-11-01' AND '2019-11-30';
+WHERE dtvenda BETWEEN '2019-11-01' AND '2019-11-30';
 
 /*Fazer um balanço financeiro MENSALMENTE para se ter uma noção da margem de lucro com Pessoas Juridicas.*/
 SELECT pessoa.nome"Nome da pessoa juridica", movimento.dtvenda"Data da Venda",movimento.tipoMovimento, (itens_mov.preco*qtde)"Preço", itens_mov.qtde"Quantidade", produto.nome"Nome do Produto"
@@ -279,7 +279,7 @@ INNER JOIN itens_mov
 ON movimento.idmov = itens_mov.idmov_mov
 INNER JOIN produto
 ON itens_mov.idprod_mov = produto.idprod
-WHERE dtvenda BETWEEN '2018-11-01' AND '2019-11-30' AND tipoMovimento = True ;
+WHERE dtvenda BETWEEN '2019-11-01' AND '2019-11-30' AND tipoMovimento = True ;
 
 
 /*Fazer um balanço financeiro DIARIAMENTE para ter um controle sobre as receitas com Pessoas Fisicas*/
@@ -292,7 +292,7 @@ INNER JOIN itens_mov
 ON movimento.idmov = itens_mov.idmov_mov
 INNER JOIN produto
 ON itens_mov.idprod_mov = produto.idprod
-WHERE dtvenda BETWEEN '2018-11-25' AND '2018-11-25';
+WHERE dtvenda BETWEEN '2019-11-25' AND '2019-11-25';
 
 /*Fazer um balanço financeiro DIARIAMENTE para ter um controle sobre as receitas com Pessoas Juridicas*/
 SELECT pessoa.nome"Nome da Pessoa Fisica", movimento.dtvenda"Data da Venda", movimento.tipoMovimento, (itens_mov.preco*qtde)"Preço", itens_mov.qtde"Quantidade", produto.nome"Nome do Produto"
@@ -304,7 +304,7 @@ INNER JOIN itens_mov
 ON movimento.idmov = itens_mov.idmov_mov
 INNER JOIN produto
 ON itens_mov.idprod_mov = produto.idprod
-WHERE dtvenda BETWEEN '2018-11-25' AND '2018-11-25' AND tipoMovimento = True;
+WHERE dtvenda BETWEEN '2019-11-25' AND '2019-11-25' AND tipoMovimento = True;
 
 
 /*Fazer um balanço financeiro DIARIAMENTE para ter um controle sobre as despesas*/
@@ -317,7 +317,7 @@ INNER JOIN itens_mov
 ON movimento.idmov = itens_mov.idmov_mov
 INNER JOIN produto
 ON itens_mov.idprod_mov = produto.idprod
-WHERE dtvenda BETWEEN '2018-11-25' AND '2018-11-25' AND tipoMovimento = False; /*colocar itens */
+WHERE dtvenda BETWEEN '2019-11-21' AND '2019-11-21' AND tipoMovimento = False; /*colocar itens */
 
 
 
@@ -369,7 +369,7 @@ INNER JOIN cidade
 ON pessoa.idcidade = cidade.idcidade
 INNER JOIN estado
 ON estado.idestado = cidade.idestado
-WHERE pessoa.nome LIKE '%p%';
+WHERE pessoa.nome LIKE '%cia%';
 
 /*Permitir fazer a busca de clientes pelo nome, para possíveis alterações futuras*/
 SELECT pessoa.nome"Nome da Pessoa",pessoa.telefone"Telefone",pessoa.endereco"Endereço",pessoa.email"Email", pessoaFisica.cpf"CPF", pessoaFisica.rg"RG",pessoaFisica.dtNasc"Data de Nasc",cidade.nome"Cidade",estado.nome"Estado"
@@ -379,4 +379,4 @@ INNER JOIN cidade
 ON pessoa.idcidade = cidade.idcidade
 INNER JOIN estado
 ON estado.idestado = cidade.idestado
-WHERE pessoa.nome LIKE '%a%';
+WHERE pessoa.nome LIKE '%Ana%';
