@@ -227,8 +227,8 @@ VALUES ('Notebook Lenovo i3', 40, 20, 1900.00),
 
 /*alterar tudo isso*/
 INSERT INTO itens_mov(idmov_mov,idprod_mov,qtde,preco) VALUES
-(1,1,20,'1900.00'), /*Atenção repita o preço do produto, pois ficará no histórico, a tabela produto pode ter seus preços alterados*/
-(1,2,10,'400.50'),
+(1,1,3,'1900.00'), /*Atenção repita o preço do produto, pois ficará no histórico, a tabela produto pode ter seus preços alterados*/
+(1,2,4,'400.50'),
 (2,3,5,'224.50'),
 (2,4,6,'355.50'),
 (3,5,7,'529.50'),
@@ -240,7 +240,6 @@ INSERT INTO itens_mov(idmov_mov,idprod_mov,qtde,preco) VALUES
 (6,11,2,'999.99'),
 (6,12,2,'1200.50');
 
-/*SELECTS A SEREM ALTERADOS*/
 
 /*Fazer um balanço financeiro MENSALMENTE para ter uma noção das DESPESAS em compras com o pessoaJuridica.*/
 SELECT pessoa.nome"Nome da Empresa Juridica", movimento.dtvenda"Data da Compra", movimento.tipoMovimento, (itens_mov.preco*qtde)"Preço Total", itens_mov.qtde"Quantidade", produto.nome"Nome do Produto"
