@@ -1,0 +1,32 @@
+CREATE SEQUENCE id_est;
+
+CREATE TABLE estado(
+id_est INT DEFAULT nextval('id_est')
+PRIMARY KEY,
+nome VARCHAR(100) NOT NULL,
+sigla VARCHAR(100) NOT NULL
+);
+
+INSERT INTO estado(nome, sigla) VALUES
+('Paraná','PR'),
+('São Paulo','SP'),
+('Rio de janeiro','RJ')
+
+SELECT * FROM estado;
+
+CREATE SEQUENCE id_cli;
+
+CREATE TABLE cliente(id_cli INT DEFAULT nextval('id_cli')
+PRIMARY KEY,
+nome VARCHAR(100) NOT NULL,
+rg VARCHAR(100) NOT NULL,
+cpf VARCHAR(100) NOT NULL,
+endereco VARCHAR(100) NOT NULL,
+telefone VARCHAR(100) NOT NULL
+);
+
+INSERT INTO cliente(nome, rg, cpf, endereco, telefone) VALUES
+('julio','12312312','12312312312','34481111');
+
+
+SELECT * FROM cliente;
